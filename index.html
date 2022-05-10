@@ -35,7 +35,29 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center mt-3">
-            <p>Hier komt binnenkort een calculator voor de Hb1Ac waarde! <i class="far fa-smile"></i></p>
+            <h1>HbA1c Calculator</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group mb-3 col-6">
+            <label for="blood1">Bloedwaarde 1</label>
+            <input type="number" class="form-control" id="blood1">
+            <small class="form-text text-muted">Vul hier de eerste bloedwaarde in.</small>
+        </div>
+        <div class="form-group mb-3 col-6">
+            <label for="blood2">Bloedwaarde 2</label>
+            <input type="number" class="form-control" id="blood2">
+            <small class="form-text text-muted">Vul hier de tweede bloedwaarde in.</small>
+        </div>
+    </div>
+    <div class="row">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-primary active">
+                <input type="radio" name="formula" autocomplete="off" checked> mmol/mol
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" name="formula" autocomplete="off"> Percentage
+            </label>
         </div>
     </div>
 </div>
