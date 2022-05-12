@@ -1,0 +1,60 @@
+.formulaType input[type="radio"] {
+    visibility: hidden;
+    display: none;
+}
+
+#calculate {
+    width: 100%;
+}
+
+.text-right-cus {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.color-white {
+    color: #eeeaea;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 0;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    background-color: #0D6EFD;
+}
+
+.menu a {
+    color: white;
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    transition: 300ms;
+}
+
+.menu a:hover {
+    color: #8bb5ff;
+}
+
+.color-gray, .footer-links a {
+    color: #c1c1c1;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
