@@ -1,0 +1,8 @@
+{
+  "step-1": {
+    "bloodValues": "Bloedwaarden",
+    "bloodValue": "Bloedwaarde",
+    "explanation-a": "Vul hier de eerst gemeten bloedwaarde in.",
+    "explanation-b": "Vul hier de als tweede gemeten bloedwaarde in."
+  }
+}

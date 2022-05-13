@@ -1,0 +1,25 @@
+{
+  "name": "hba1c.github.io",
+  "version": "1.0.0",
+  "description": "Github pages repo for the web-app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DSa-HbA1c/HbA1c.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DSa-HbA1c/HbA1c.github.io/issues"
+  },
+  "homepage": "https://github.com/DSa-HbA1c/HbA1c.github.io#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "hbs": "^4.2.0",
+    "i18n-express": "^1.1.3"
+  }
+}

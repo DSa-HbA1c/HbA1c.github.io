@@ -1,0 +1,137 @@
+<div class="container bg-light">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-0 h1" href="#">HbA1c Inaccuracy Check</a>
+      <div class="navbar">
+        <div class="navbar-nav">
+          <div class="langSelect">
+            <div class="langSelect-wrapper">
+              <select aria-label="select language">
+                <option value="nl" selected>🇳🇱 Nederlands</option>
+                <option value="en">🇬🇧 English</option>
+              </select>
+            </div>
+          </div>
+
+          <ul>
+            <li><a href="/?clang=nl">Nederlands</a></li>
+            <li><a href="/?clang=en">English</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="page">
+    <div class="card mb-3 gridItem">
+      <div class="card-body">
+        <div class="card-title bold h3">1.
+          {{translation.step-1.bloodValues}}</div>
+        <div class="form-group mb-3 col-6">
+          <label for="blood1">{{translation.step-1.bloodValue}} 1</label>
+          <input type="number" class="form-control" id="blood1" />
+          <small
+            class="form-text text-muted"
+          >{{translation.step-1.explanation-a}}</small>
+        </div>
+
+        <h1>{{test}}</h1>
+        <div class="form-group mb-3 col-6">
+          <label for="blood2">{{translation.step-1.bloodValue}} 2</label>
+          <input type="number" class="form-control" id="blood2" />
+          <small
+            class="form-text text-muted"
+          >{{translation.step-1.explanation-b}}</small>
+        </div>
+        <div class="row">
+          <div
+            class="btn-group btn-group-toggle formulaType"
+            data-toggle="buttons"
+          >
+            <label class="btn btn-primary">
+              <input
+                class="unit"
+                type="radio"
+                name="type"
+                autocomplete="off"
+                checked
+              />
+              mmol/mol
+            </label>
+            <label class="btn btn-primary">
+              <input class="unit" type="radio" name="type" autocomplete="off" />
+              Percentage
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-3 gridItem">
+      <div class="card-body">
+        <div class="card-title bold h3">2. Variaties</div>
+        <div class="form-group mb-3 col-12 mt-3">
+          <label for="cvi">Biologische variatie (CVI)</label>
+          <input type="number" class="form-control" id="cvi" value="1.3" />
+          <small class="form-text text-muted">Vul hier de CVI waarde in.</small>
+        </div>
+        <div class="form-group col-12">
+          <label>Analytische variatie (CVA)</label>
+          <select
+            class="form-select"
+            id="cva-select"
+            aria-label="Default select example"
+          >
+            <option value="1">Apparaat X</option>
+            <option value="-1">Anders, namelijk...</option>
+          </select>
+          <small class="form-text text-muted">Geef hier een CVA waarde aan.</small>
+        </div>
+        <div class="form-group mb-3 col-12 custom-cva">
+          <label for="cva-custom">CVA waarde</label>
+          <input type="number" class="form-control" id="cva-custom" />
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 submitBtn">
+      <button type="button text-center" class="btn btn-primary" id="calculate">
+        Check onnauwkeurigheid
+      </button>
+    </div>
+    <div class="card mb-3" id="resultContainer" style="display: none">
+      <div
+        id="in-range"
+        class="card card-body bg-success color-white"
+        style="display: none"
+      >
+        <h5 class="card-title">Resultaat</h5>
+        <p class="card-text">
+          Het HbA1c-resultaat is
+          <span class="text-underline text-bold">niet</span>
+          significant veranderd ten opzichte van het vorige resultaat
+        </p>
+      </div>
+
+      <div
+        id="out-range"
+        class="card card-body bg-danger color-white"
+        style="display: none"
+      >
+        <h5 class="card-title">Resultaat</h5>
+        <p class="card-text">
+          Het HbA1c-resultaat is significant veranderd ten opzichte van het
+          vorige resultaat
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="row text-center color-gray">
+    <div class="col-6 m-auto mt-4">
+      <p>An Isala Zwolle and Windesheim Zwolle collaboration</p>
+    </div>
+    <div class="footer-links mb-4">
+      <a href="#">Github</a>
+      <a href="#">Instructions</a>
+      <a href="#">About us</a>
+    </div>
+  </footer>
+</div>

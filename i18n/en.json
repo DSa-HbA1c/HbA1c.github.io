@@ -1,0 +1,8 @@
+{
+  "step-1": {
+    "bloodValues": "Blood Values",
+    "bloodValue": "Blood value",
+    "explanation-a": "Please enter the first measured blood value.",
+    "explanation-b": "Please enter the second measured blood value."
+  }
+}
