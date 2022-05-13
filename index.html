@@ -41,8 +41,10 @@
       referrerpolicy="no-referrer"
     ></script>
   </head>
+
   <body class="bg-light">
     <div class="container bg-light">
+
         <nav class="navbar navbar-light bg-light">
           <div class="container-fluid">
             <a class="navbar-brand mb-0 h1" href="#">HbA1c Inaccuracy Check</a>
@@ -56,13 +58,14 @@
                     alt="NL flag"
                   />
                 </a>
-                <a class="nav-link" href="#">Instructies</a>
-                <a class="nav-link" href="#">Over ons</a>
               </div>
             </div>
           </div>
         </nav>
-        <div class="card mb-3">
+        <section class="page">
+
+        
+        <div class="card mb-3 gridItem">
           <div class="card-body">
             <div class="card-title bold h3">1. Bloedwaarden</div>
             <div class="form-group mb-3 col-6">
@@ -93,7 +96,7 @@
             </div>
           </div>
         </div>
-        <div class="card mb-3">
+        <div class="card mb-3 gridItem">
           <div class="card-body">
             <div class="card-title bold h3">2. Variaties</div>
               <div class="form-group mb-3 col-12 mt-3">
@@ -121,13 +124,13 @@
               </div>
           </div>
         </div> 
-        <div class=" mb-3">
+        <div class=" mb-3 submitBtn">
           <button type="button text-center" class="btn btn-primary" id="calculate">
             Check onnauwkeurigheid
           </button>
-      </div>
-        <div class="card mb-3">
-            <div id="in-margin" class="card card-body bg-success color-white" style="display:none" >
+        </div>
+        <div class="card mb-3" id="resultContainer" style="display:none">
+            <div id="in-range" class="card card-body bg-success color-white" style="display:none" >
               <h5 class="card-title">Resultaat</h5>
               <p class="card-text">
                 Het HbA1c-resultaat is
@@ -135,14 +138,18 @@
                 significant veranderd ten opzichte van het vorige resultaat
               </p>
             </div>
-            <div id="out-margin"class="card card-body bg-danger color-white" style="display:none">
+
+            <div id="out-range" class="card card-body bg-danger color-white" style="display:none">
               <h5 class="card-title">Resultaat</h5>
               <p class="card-text">
                 Het HbA1c-resultaat is significant veranderd ten opzichte van het vorige resultaat
               </p>
             </div>
-      </div>
-      <div id="footer" class="row text-center color-gray">
+        </div>
+
+        </section>
+        
+      <footer id="footer" class="row text-center color-gray">
         <div class="col-6 m-auto mt-4">
           <p>An Isala Zwolle and Windesheim Zwolle collaboration</p>
         </div>
@@ -151,7 +158,7 @@
           <a href="#">Instructions</a>
           <a href="#">About us</a>
         </div>
-      </div>
+      </footer>
 
     <!--  Post-load scripts  -->
     <script src="assets/js/script.js"></script>

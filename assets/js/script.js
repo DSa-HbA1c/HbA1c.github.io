@@ -27,53 +27,51 @@ CVAselect.addEventListener("change", () => {
 });
 
 const checkInput = document.querySelector("#calculate");
-const inMargin = document.querySelector("#in-margin");
-const outMargin = document.querySelector("#out-margin");
+const inRange = document.querySelector("#in-range");
+const outRange = document.querySelector("#out-range");
 
 checkInput.addEventListener("click", () => {
   const blood1 = parseFloat(document.querySelector("#blood1").value);
   const blood2 = parseFloat(document.querySelector("#blood2").value);
   const cvi = parseFloat(document.querySelector("#cvi").value);
   const cva = parseFloat(document.querySelector("#cva-custom").value);
-  const z = 1.95
+  const z = 1.95;
 
   const rcv = getRCV(cva, cvi, z);
-  const margin = rcv / 2;
+  const range = rcv / 2;
 
-  const innerBound = blood1 - margin;
-  const outerBound = blood1 + margin;
+  const innerBound = blood1 - range;
+  const outerBound = blood1 + range;
 
   console.log("rcv: ", rcv);
-  console.log("margin: ", margin);
+  console.log("range: ", range);
   console.log("blood1: ", blood1);
   console.log("innerBound: ", innerBound);
   console.log("outerBound: ", outerBound);
   console.log("blood2: ", blood2);
 
-  if(blood2 > innerBound && blood2 < outerBound) {
-    inMargin.style.display = "";
-    outMargin.style.display = "none";
-  }
-  else
-  {
-    inMargin.style.display = "none";
-    outMargin.style.display = "";
+  const resultContainer = document.querySelector("#resultContainer");
+  resultContainer.style.display = "";
+
+  if (blood2 > innerBound && blood2 < outerBound) {
+    inRange.style.display = "";
+    outRange.style.display = "none";
+  } else {
+    inRange.style.display = "none";
+    outRange.style.display = "";
   }
 });
 
-function getRCV(cva, cvi, z){
-  return Math.sqrt(cva**2 + cvi**2) * Math.sqrt(2) * z
+function getRCV(cva, cvi, z) {
+  return Math.sqrt(cva ** 2 + cvi ** 2) * Math.sqrt(2) * z;
 }
 
 const langImg = document.querySelector("#lang-img");
 langImg.addEventListener("click", () => {
   const path = langImg.src.slice(-6);
-  if(path == "nl.svg")
-  {
+  if (path == "nl.svg") {
     langImg.src = "assets/images/gb.svg";
-  }
-  else
-  {
+  } else {
     langImg.src = "assets/images/nl.svg";
   }
 });
