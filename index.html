@@ -40,118 +40,106 @@
       referrerpolicy="no-referrer"
     ></script>
   </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-6 mt-3">
-          <h1>HbA1c Inaccuracy Check</h1>
+  <body class="bg-light">
+    <div class="container bg-light">
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand mb-0 h1" href="#">HbA1c Inaccuracy Check</a>
+            <div class="navbar">
+              <div class="navbar-nav">
+                <a class="nav-link" href="#">
+                  <img id="lang-img"
+                    src="assets/images/nl.svg"
+                    width="50px"
+                    height="auto"
+                    alt="NL flag"
+                  />
+                </a>
+                <a class="nav-link" href="#">Instructies</a>
+                <a class="nav-link" href="#">Over ons</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="card-title bold h3">1. Bloedwaarden</div>
+            <div class="form-group mb-3 col-6">
+              <label for="blood1">Bloedwaarde 1</label>
+              <input type="number" class="form-control" id="blood1" />
+              <small class="form-text text-muted"
+                >Vul hier de eerst gemeten bloedwaarde in.</small
+              >
+            </div>
+            <div class="form-group mb-3 col-6">
+              <label for="blood2">Bloedwaarde 2</label>
+              <input type="number" class="form-control" id="blood2" />
+              <small class="form-text text-muted"
+                >Vul hier de als tweede gemeten bloedwaarde in.</small
+              >
+            </div>
+            <div class="row">
+              <div class="btn-group btn-group-toggle formulaType" data-toggle="buttons">
+                <label class="btn btn-primary">
+                  <input class="unit" type="radio" name="type" autocomplete="off" checked/>
+                  mmol/mol
+                </label>
+                <label class="btn btn-primary">
+                  <input class="unit" type="radio" name="type" autocomplete="off" />
+                  Percentage
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-6 text-right-cus">
-          <a href="#"
-            ><img
-              src="assets/images/nl.svg"
-              width="50px"
-              height="auto"
-              alt="NL flag"
-          /></a>
-        </div>
-      </div>
-    </div>
-    <div class="menu">
-      <a href="#">Instructies</a>
-      <a href="#">Over ons</a>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="form-group mb-3 col-6">
-          <label for="blood1">Bloedwaarde 1</label>
-          <input type="number" class="form-control" id="blood1" />
-          <small class="form-text text-muted"
-            >Vul hier de eerste bloedwaarde in.</small
-          >
-        </div>
-        <div class="form-group mb-3 col-6">
-          <label for="blood2">Bloedwaarde 2</label>
-          <input type="number" class="form-control" id="blood2" />
-          <small class="form-text text-muted"
-            >Vul hier de tweede bloedwaarde in.</small
-          >
-        </div>
-      </div>
-      <div class="row">
-        <div
-          class="btn-group btn-group-toggle formulaType"
-          data-toggle="buttons"
-        >
-          <label class="btn btn-primary">
-            <input
-              class="unit"
-              type="radio"
-              name="type"
-              autocomplete="off"
-              checked
-            />
-            mmol/mol
-          </label>
-          <label class="btn btn-primary">
-            <input class="unit" type="radio" name="type" autocomplete="off" />
-            Percentage
-          </label>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="form-group mb-3 col-12 mt-3">
-          <label for="cvi">Biologische variatie (CVI)</label>
-          <input type="number" class="form-control" id="cvi" value="1.3" />
-          <small class="form-text text-muted">Vul hier de CVI waarde in.</small>
-        </div>
-        <div class="form-group col-12">
-          <label>Analytische variatie (CVA)</label>
-          <select
-            class="form-select"
-            id="cva-select"
-            aria-label="Default select example"
-          >
-            <option value="1">Apparaat X</option>
-            <option value="-1">Anders, namelijk...</option>
-          </select>
-          <small class="form-text text-muted"
-            >Geef hier een CVA waarde aan.</small
-          >
-        </div>
-        <div class="form-group mb-3 col-12 custom-cva" style="display: none">
-          <label for="cva-custom">CVA waarde</label>
-          <input type="number" class="form-control" id="cva-custom" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <button type="button" class="btn btn-primary" id="calculate">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="card-title bold h3">2. Variaties</div>
+              <div class="form-group mb-3 col-12 mt-3">
+                <label for="cvi">Biologische variatie (CVI)</label>
+                <input type="number" class="form-control" id="cvi" value="1.3" />
+                <small class="form-text text-muted">Vul hier de CVI waarde in.</small>
+              </div>
+              <div class="form-group col-12">
+                <label>Analytische variatie (CVA)</label>
+                <select
+                  class="form-select"
+                  id="cva-select"
+                  aria-label="Default select example"
+                >
+                  <option value="1">Apparaat X</option>
+                  <option value="-1">Anders, namelijk...</option>
+                </select>
+                <small class="form-text text-muted"
+                  >Geef hier een CVA waarde aan.</small
+                >
+              </div>
+              <div class="form-group mb-3 col-12 custom-cva">
+                <label for="cva-custom">CVA waarde</label>
+                <input type="number" class="form-control" id="cva-custom" />
+              </div>
+          </div>
+        </div> 
+        <div class=" mb-3">
+          <button type="button text-center" class="btn btn-primary" id="calculate">
             Check onnauwkeurigheid
           </button>
-        </div>
       </div>
-      <div class="row">
-        <div class="col-md-12 mt-5">
-          <div class="card card-body bg-danger color-white">
-            <h5 class="card-title">Resultaat</h5>
-            <p class="card-text">
-              Bloedwaarde valt
-              <span class="text-underline text-bold">binnen</span> de RCV
-              waarde.
-            </p>
-          </div>
-        </div>
-        <div class="col-md-12 mt-5">
-          <div class="card card-body bg-success color-white">
-            <h5 class="card-title">Resultaat</h5>
-            <p class="card-text">
-              Bloedwaarde valt
-              <span class="text-underline text-bold">buiten</span> de RCV
-              waarde.
-            </p>
-          </div>
-        </div>
+        <div class="card mb-3">
+            <div id="in-margin" class="card card-body bg-success color-white" style="display:none" >
+              <h5 class="card-title">Resultaat</h5>
+              <p class="card-text">
+                Het HbA1c-resultaat is
+                <span class="text-underline text-bold">niet</span>
+                significant veranderd ten opzichte van het vorige resultaat
+              </p>
+            </div>
+            <div id="out-margin"class="card card-body bg-danger color-white" style="display:none">
+              <h5 class="card-title">Resultaat</h5>
+              <p class="card-text">
+                Het HbA1c-resultaat is significant veranderd ten opzichte van het vorige resultaat
+              </p>
+            </div>
       </div>
       <div id="footer" class="row text-center color-gray">
         <div class="col-6 m-auto mt-4">
@@ -163,7 +151,7 @@
           <a href="#">About us</a>
         </div>
       </div>
-    </div>
+
     <!--  Post-load scripts  -->
     <script src="assets/js/script.js"></script>
   </body>
