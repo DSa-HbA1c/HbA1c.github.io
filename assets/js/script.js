@@ -38,16 +38,16 @@ checkInput.addEventListener("click", () => {
   const z = 1.95;
 
   const rcv = getRCV(cva, cvi, z);
-  const range = rcv / 2;
 
-  const innerBound = blood1 - range;
-  const outerBound = blood1 + range;
+  const rcvPercentage = rcv / 100;
+
+  const innerBound = blood1 * (1 - rcvPercentage);
+  const outerBound = blood1 * (1 + rcvPercentage);
 
   console.log("rcv: ", rcv);
-  console.log("range: ", range);
-  console.log("blood1: ", blood1);
   console.log("innerBound: ", innerBound);
   console.log("outerBound: ", outerBound);
+  console.log("blood1: ", blood1);
   console.log("blood2: ", blood2);
 
   const resultContainer = document.querySelector("#resultContainer");
@@ -56,9 +56,11 @@ checkInput.addEventListener("click", () => {
   if (blood2 > innerBound && blood2 < outerBound) {
     inRange.style.display = "";
     outRange.style.display = "none";
+    inRange.scrollIntoView();
   } else {
     inRange.style.display = "none";
     outRange.style.display = "";
+    outMargin.scrollIntoView();
   }
 });
 
