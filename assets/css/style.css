@@ -82,8 +82,10 @@ footer {
 
 .langSelect-wrapper {
   margin-bottom: 0.75rem;
+}
 
-  @media (min-width: 1280px) {
+@media (min-width: 1280px) {
+  .langSelect-wrapper {
     width: 24rem;
   }
 }
@@ -131,4 +133,99 @@ footer {
     display: flex;
     flex-direction: column;
   }
+}
+
+.resultgraph {
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 15px;
+  position: relative;
+  min-height: 60px;
+}
+
+.resultgraphcontainer {
+  margin-top: 20px;
+  position: relative;
+  min-height: 60px;
+  padding: 10px;
+}
+
+div#bar {
+  display: block;
+  width: 50%;
+  height: 20px;
+  background-color: #6ABC45;
+  border-radius: 50px;
+  position: absolute;
+  z-index: 20;
+}
+
+div#res1 {
+  position: absolute;
+  left: calc(25% - 10px);
+  color: white;
+  background-color: #6ABC45;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  border-radius: 50%;
+  border: 1px solid white;
+  z-index: 25;
+}
+
+div#res2 {
+  position: absolute;
+  left: calc(40% - 10px);
+  color: white;
+  background-color: #E27225;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  border-radius: 50%;
+  border: 1px solid white;
+  z-index: 30;
+}
+
+div#barleft, div#barright {
+  position: absolute;
+  bottom: 0;
+}
+
+div#res1title, div#res2title {
+  position: absolute;
+  top: -25px;
+}
+
+div#barleft {
+  left: 1px;
+}
+
+div#barright {
+  left: calc(50% - 1px);
+}
+
+div#res1title {
+  left: calc(25% + 5px);
+}
+
+div#res2title {
+  left: calc(40% + 5px);
+}
+
+div#barleft::after, div#barright::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-left: 1px solid;
+  bottom: 20px;
+  left: 50%;
 }

@@ -63,16 +63,16 @@
         <div class="card mb-3 gridItem">
           <div class="card-body">
             <div class="card-title bold h3">1. Bloedwaarden</div>
-            <div class="form-group mb-3 col-6">
+            <div class="form-group mb-3 col-12">
               <label for="blood1">Bloedwaarde 1</label>
-              <input type="number" class="form-control" id="blood1" />
+              <input type="number" class="form-control" id="blood1" value="53" />
               <small class="form-text text-muted"
                 >Vul hier de eerst gemeten bloedwaarde in.</small
               >
             </div>
-            <div class="form-group mb-3 col-6">
+            <div class="form-group mb-3 col-12">
               <label for="blood2">Bloedwaarde 2</label>
-              <input type="number" class="form-control" id="blood2" />
+              <input type="number" class="form-control" id="blood2" value="56" />
               <small class="form-text text-muted"
                 >Vul hier de als tweede gemeten bloedwaarde in.</small
               >
@@ -131,7 +131,7 @@
             </div>
             <div class="form-group mb-3 col-12 custom-cva">
               <label for="cva-custom">CVA waarde</label>
-              <input type="number" class="form-control" id="cva-custom" />
+              <input type="number" class="form-control" id="cva-custom" value="7" />
             </div>
           </div>
         </div>
@@ -171,6 +171,18 @@
           </div>
         </div>
       </section>
+
+      <div class="resultgraph">
+        <div class="resultgraphcontainer">
+          <div id="res1title">1</div>
+          <div id="res2title">2</div>
+          <div id="bar"></div>
+          <div id="res1">53</div>
+          <div id="res2">56</div>
+          <div id="barleft">46</div>
+          <div id="barright">60</div>
+        </div>
+      </div>
 
       <footer id="footer" class="row text-center color-gray">
         <div class="col-6 m-auto mt-4">
