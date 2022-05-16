@@ -3,9 +3,11 @@ const express = require("express");
 const i18n = require("i18n-express");
 const exphbs = require("express-handlebars");
 
+const serverless = require("serverless-http");
+
 const app = express();
 
-// app.set("views", path.join(__dirname, "views"));
+app.set("views", "views");
 // app.set("view engine", "hbs");
 
 app.engine(
@@ -18,18 +20,24 @@ app.engine(
 
 app.set("view engine", "hbs");
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
 
 app.use(
   i18n({
-    translationsPath: path.join(__dirname, "i18n"),
+    translationsPath: "i18n",
     siteLangs: ["nl", "en"],
     textsVarName: "translation",
   })
 );
 
-app.get("/", (req, res) => {
+const router = express.Router();
+
+router.get("/", (req, res) => {
   res.render("home");
 });
 
-app.listen(5555);
+app.use("/.netlify/functions/app", router);
+
+// app.listen(5555);
+
+module.exports.handler = serverless(app);
