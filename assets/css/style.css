@@ -126,9 +126,24 @@ footer {
   grid-column: span 2;
 }
 
-@media screen and (max-width: 800px) {
+/* Tablet portret */
+@media (min-width: 501px) and (max-width: 900px) {
   .page {
     display: flex;
     flex-direction: column;
+  }
+  .langSelect-wrapper {
+      margin-bottom: 0 !important;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 500px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar > div {
+    justify-content: center !important;
   }
 }

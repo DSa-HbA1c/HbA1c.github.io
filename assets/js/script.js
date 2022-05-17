@@ -31,11 +31,20 @@ const inRange = document.querySelector("#in-range");
 const outRange = document.querySelector("#out-range");
 
 checkInput.addEventListener("click", () => {
+  document.getElementsByClassName("errorMessage")[0].style.display = "none";
+
   const blood1 = parseFloat(document.querySelector("#blood1").value);
   const blood2 = parseFloat(document.querySelector("#blood2").value);
   const cvi = parseFloat(document.querySelector("#cvi").value);
   const cva = parseFloat(document.querySelector("#cva-custom").value);
   const z = 1.95;
+
+  if (isNaN(blood1) || isNaN(blood2) || isNaN(cva)) {
+    const errorMessage = document.getElementsByClassName("errorMessage")[0]
+    errorMessage.style.display = "block";
+    errorMessage.scrollIntoView();
+    return;
+  }
 
   const rcv = getRCV(cva, cvi, z);
 
@@ -60,7 +69,7 @@ checkInput.addEventListener("click", () => {
   } else {
     inRange.style.display = "none";
     outRange.style.display = "";
-    outMargin.scrollIntoView();
+    outRange.scrollIntoView();
   }
 });
 

@@ -59,25 +59,29 @@
           </div>
         </div>
       </nav>
+      <div class="alert alert-danger errorMessage" role="alert" style="display: none;">
+        Een aantal velden zijn niet correct ingevuld!
+      </div>
       <section class="page">
         <div class="card mb-3 gridItem">
           <div class="card-body">
             <div class="card-title bold h3">1. Bloedwaarden</div>
-            <div class="form-group mb-3 col-6">
+            <div class="form-group mb-3 col-12 mt-3">
               <label for="blood1">Bloedwaarde 1</label>
               <input type="number" class="form-control" id="blood1" />
               <small class="form-text text-muted"
                 >Vul hier de eerst gemeten bloedwaarde in.</small
               >
             </div>
-            <div class="form-group mb-3 col-6">
+            <div class="form-group mb-3 col-12">
               <label for="blood2">Bloedwaarde 2</label>
               <input type="number" class="form-control" id="blood2" />
               <small class="form-text text-muted"
                 >Vul hier de als tweede gemeten bloedwaarde in.</small
               >
             </div>
-            <div class="row">
+            <div class="row mb-3">
+              <label>Meetinstrument</label>
               <div
                 class="btn-group btn-group-toggle formulaType"
                 data-toggle="buttons"
@@ -122,14 +126,14 @@
                 id="cva-select"
                 aria-label="Default select example"
               >
+                <option value="-1" selected="selected">Anders, namelijk...</option>
                 <option value="1">Apparaat X</option>
-                <option value="-1">Anders, namelijk...</option>
               </select>
               <small class="form-text text-muted"
                 >Geef hier een CVA waarde aan.</small
               >
             </div>
-            <div class="form-group mb-3 col-12 custom-cva">
+            <div class="form-group mb-3 col-12 mt-3 custom-cva">
               <label for="cva-custom">CVA waarde</label>
               <input type="number" class="form-control" id="cva-custom" />
             </div>
