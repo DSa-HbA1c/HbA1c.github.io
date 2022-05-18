@@ -39,13 +39,6 @@ checkInput.addEventListener("click", () => {
   const cva = parseFloat(document.querySelector("#cva-custom").value);
   const z = 1.95;
 
-  // if (isNaN(blood1) || isNaN(blood2) || isNaN(cva)) {
-  //   const errorMessage = document.getElementsByClassName("errorMessage")[0];
-  //   errorMessage.style.display = "block";
-  //   errorMessage.scrollIntoView();
-  //   return;
-  // }
-
   const errorMessage = document.getElementsByClassName("errorMessage")[0];
   let showError = false;
   let errorText;
