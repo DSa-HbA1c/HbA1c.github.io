@@ -91,3 +91,13 @@ checkInput.addEventListener("click", () => {
 function getRCV(cva, cvi, z) {
   return Math.sqrt(cva ** 2 + cvi ** 2) * Math.sqrt(2) * z;
 }
+
+function translate(lng, tagAttr){
+  var translate = new Translate();
+  translate.init(tagAttr, lng);
+  translate.process();
+}
+
+document.getElementById("languageSelector").addEventListener("change", function(){
+  translate(this.value, 'lng');
+});
