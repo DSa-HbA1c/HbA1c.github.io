@@ -45,18 +45,22 @@ checkInput.addEventListener("click", () => {
 
   if (isNaN(blood1)) {
     errorText = "Bloedwaarde 1 is onjuist ingevuld";
+    errorMessage.setAttribute("lng", "errorMessage1");
     showError = true;
   } else if (isNaN(blood2)) {
     errorText = "Bloedwaarde 2 is onjuist ingevuld";
+    errorMessage.setAttribute("lng", "errorMessage2");
     showError = true;
   } else if (isNaN(cva)) {
     errorText = "CVA is onjuist ingevuld";
+    errorMessage.setAttribute("lng", "errorMessage3");
     showError = true;
   }
 
   if (showError) {
     errorMessage.innerHTML = errorText;
     errorMessage.style.display = "block";
+    translate(document.getElementById("languageSelector").value, 'lng');
     errorMessage.scrollIntoView();
     return;
   }
@@ -101,3 +105,5 @@ function translate(lng, tagAttr){
 document.getElementById("languageSelector").addEventListener("change", function(){
   translate(this.value, 'lng');
 });
+
+translate("nl", 'lng');
