@@ -39,8 +39,30 @@ checkInput.addEventListener("click", () => {
   const cva = parseFloat(document.querySelector("#cva-custom").value);
   const z = 1.95;
 
-  if (isNaN(blood1) || isNaN(blood2) || isNaN(cva)) {
-    const errorMessage = document.getElementsByClassName("errorMessage")[0]
+  // if (isNaN(blood1) || isNaN(blood2) || isNaN(cva)) {
+  //   const errorMessage = document.getElementsByClassName("errorMessage")[0];
+  //   errorMessage.style.display = "block";
+  //   errorMessage.scrollIntoView();
+  //   return;
+  // }
+
+  const errorMessage = document.getElementsByClassName("errorMessage")[0];
+  let showError = false;
+  let errorText;
+
+  if (isNaN(blood1)) {
+    errorText = "Bloedwaarde 1 is onjuist ingevuld";
+    showError = true;
+  } else if (isNaN(blood2)) {
+    errorText = "Bloedwaarde 2 is onjuist ingevuld";
+    showError = true;
+  } else if (isNaN(cva)) {
+    errorText = "CVA is onjuist ingevuld";
+    showError = true;
+  }
+
+  if (showError) {
+    errorMessage.innerHTML = errorText;
     errorMessage.style.display = "block";
     errorMessage.scrollIntoView();
     return;
