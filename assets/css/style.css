@@ -82,15 +82,9 @@ footer {
 
 .langSelect-wrapper {
   margin-bottom: 0.75rem;
-
-  @media (min-width: 1280px) {
-    width: 24rem;
-  }
 }
 
-.langSelect-wrapper > select {
-  display: block;
-
+select {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   padding-left: 0.75rem;
@@ -111,7 +105,6 @@ footer {
   border-width: 1px;
   border-color: #d1d5db;
   border-style: solid;
-  appearance: none;
 }
 
 .page {
@@ -133,7 +126,7 @@ footer {
     flex-direction: column;
   }
   .langSelect-wrapper {
-      margin-bottom: 0 !important;
+    margin-bottom: 0 !important;
   }
 }
 

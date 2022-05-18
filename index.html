@@ -42,12 +42,12 @@
 
   <body class="bg-light">
     <div class="container bg-light">
-      <nav class="navbar navbar-light bg-light">
+      <!-- <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand mb-0 h1" href="#">HbA1c Inaccuracy Check</a>
           <div class="navbar">
             <div class="navbar-nav">
-              <div class="langSelect">
+             <div class="langSelect">
                 <div class="langSelect-wrapper">
                   <select aria-label="select language">
                     <option value="nl" selected>🇳🇱 Nederlands</option>
@@ -58,8 +58,40 @@
             </div>
           </div>
         </div>
-      </nav>
-      <div class="alert alert-danger errorMessage" role="alert" style="display: none;">
+      </nav> -->
+      <div class="container">
+        <header
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+        >
+          <a
+            href="/"
+            class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
+          >
+            <strong> HbA1c Inaccuracy Check </strong>
+          </a>
+
+          <ul
+            class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0"
+          >
+            <li><a href="#" class="nav-link px-2 link-blue">Home</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">FAQ</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Over Ons</a></li>
+          </ul>
+
+          <div class="col-md-3 text-end">
+            <select aria-label="select language">
+              <option value="nl" selected>🇳🇱 Nederlands</option>
+              <option value="en">🇬🇧 English</option>
+            </select>
+          </div>
+        </header>
+      </div>
+
+      <div
+        class="alert alert-danger errorMessage"
+        role="alert"
+        style="display: none"
+      >
         Een aantal velden zijn niet correct ingevuld!
       </div>
       <section class="page">
@@ -126,7 +158,9 @@
                 id="cva-select"
                 aria-label="Default select example"
               >
-                <option value="-1" selected="selected">Anders, namelijk...</option>
+                <option value="-1" selected="selected">
+                  Anders, namelijk...
+                </option>
                 <option value="1">Apparaat X</option>
               </select>
               <small class="form-text text-muted"
