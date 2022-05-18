@@ -98,13 +98,3 @@ checkInput.addEventListener("click", () => {
 function getRCV(cva, cvi, z) {
   return Math.sqrt(cva ** 2 + cvi ** 2) * Math.sqrt(2) * z;
 }
-
-const langImg = document.querySelector("#lang-img");
-langImg.addEventListener("click", () => {
-  const path = langImg.src.slice(-6);
-  if (path == "nl.svg") {
-    langImg.src = "assets/images/gb.svg";
-  } else {
-    langImg.src = "assets/images/nl.svg";
-  }
-});
